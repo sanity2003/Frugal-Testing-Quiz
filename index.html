@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container" id="landing-page">
+        <div class="logo-area">
+            <h1> Frugal Testing Quiz</h1>
+            <p>Test your skills efficiently</p>
+        </div>
+        
+        <div class="setup-form">
+            <div class="form-group">
+                <label for="category">Select Category</label>
+                <select id="category" class="styled-input">
+                    <option value="technical">Technical (Coding)</option>
+                    <option value="logical">Logical Reasoning</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="difficulty">Select Difficulty</label>
+                <select id="difficulty" class="styled-input">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            
+            <button type="button" onclick="startQuiz()" class="start-btn">Start Challenge</button>
+        </div>
+    </div>
+
+    <div class="container hidden" id="quiz-page">
+        <div class="header">
+            <div id="timer-display">Time: 15</div>
+            <div id="progress-display">Question 1/5</div>
+        </div>
+        <h2 id="question-text">Loading...</h2>
+        <div id="options-container" class="options-grid"></div>
+    </div>
+
+    <div class="container hidden" id="result-page">
+        <div class="logo-area">
+            <h1> Quiz Completed!</h1>
+        </div>
+        
+        <div class="stats-box">
+            <p>Your Final Score</p>
+            <h2 id="animated-score">0</h2>
+        </div>
+
+        <div class="charts-wrapper">
+            <div class="chart-card">
+                <h3>Accuracy</h3>
+                <canvas id="scoreChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Time Analysis</h3>
+                <canvas id="timeChart"></canvas>
+            </div>
+        </div>
+
+        <button type="button" onclick="location.reload()" class="start-btn restart-btn">Restart</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
+ 
+
+
+ 
